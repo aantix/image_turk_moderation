@@ -1,0 +1,3 @@
+== README
+
+Rails Mechanical Turk app for the approval/disapproval of images.
