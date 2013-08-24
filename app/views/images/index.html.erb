@@ -3,9 +3,8 @@
 <table class="table table-striped">
   <thead>
     <tr>
+      <th>&nbsp;</th>
       <th>Name</th>
-      <th>Description</th>
-      <th>Image path</th>
       <th></th>
     </tr>
   </thead>
@@ -13,8 +12,8 @@
   <tbody>
     <% @images.each do |image| %>
       <tr>
-        <td><%= link_to image.name, image %></td>
-        <td><%= image_tag image.image_path %></td>
+        <td><%= image_tag image.image_path, width: 100 %></td>
+        <td><%= link_to(image.name, image) if image.name.present? %></td>
         <td>
           <%= link_to 'Edit', edit_image_path(image) %> |
           <%= link_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' } %>

@@ -4,7 +4,10 @@ class CreateImages < ActiveRecord::Migration
       t.string :name
       t.text :description
       t.string :image_path
-      t.boolean :approved
+
+      t.boolean :processed, default: false
+      t.boolean :approved, default: false
+      t.boolean :nude, default: false
 
       t.timestamps
     end

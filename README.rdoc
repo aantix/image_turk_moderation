@@ -1,3 +1,21 @@
-== README
+== DESCRIPTION
 
 Rails Mechanical Turk app for the approval/disapproval of images.
+
+
+== TODO
+
+1) Create rake task that generates turk tasks for unprocessed images
+
+   a) External form should point to Images#show
+   b) mark all as processed
+
+
+2) def self.hit_complete(turkee_task)
+     #do something
+   end
+
+   Be sure to approve or disapprove, depending on whether the three assigments
+   are in agreement on whether nudity exists or not.
+
+   Look to ActionTraction for an implementation of this.
