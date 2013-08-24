@@ -4,7 +4,8 @@
   <thead>
     <tr>
       <th>&nbsp;</th>
-      <th>Name</th>
+      <th>Processed?</th>
+      <th>Approved?</th>
       <th></th>
     </tr>
   </thead>
@@ -13,10 +14,11 @@
     <% @images.each do |image| %>
       <tr>
         <td><%= image_tag image.image_path, width: 100 %></td>
-        <td><%= link_to(image.name, image) if image.name.present? %></td>
+        <td><%= image.processed %></td>
+        <td><%= image.approved %></td>
         <td>
           <%= link_to 'Edit', edit_image_path(image) %> |
-          <%= link_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%= link_to 'Delete', image, method: :delete, data: { confirm: 'Are you sure?' } %>
         </td>
       </tr>
     <% end %>
