@@ -11,15 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130823072037) do
+ActiveRecord::Schema.define(version: 20130825064324) do
+
+  create_table "image_moderations", force: true do |t|
+    t.integer  "image_id"
+    t.string   "choice"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "images", force: true do |t|
     t.string   "name"
     t.text     "description"
     t.string   "image_path"
-    t.boolean  "processed",   default: false
-    t.boolean  "approved",    default: false
-    t.boolean  "nude",        default: false
+    t.string   "state",          default: "unprocessed"
+    t.boolean  "nude",           default: false
+    t.integer  "turkee_task_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

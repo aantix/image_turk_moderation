@@ -4,8 +4,7 @@
   <thead>
     <tr>
       <th>&nbsp;</th>
-      <th>Processed?</th>
-      <th>Approved?</th>
+      <th>State</th>
       <th></th>
     </tr>
   </thead>
@@ -14,8 +13,9 @@
     <% @images.each do |image| %>
       <tr>
         <td><%= image_tag image.image_path, width: 100 %></td>
-        <td><%= image.processed %></td>
-        <td><%= image.approved %></td>
+        <td>
+          <%= image.state %>
+        </td>
         <td>
           <%= link_to 'Edit', edit_image_path(image) %> |
           <%= link_to 'Delete', image, method: :delete, data: { confirm: 'Are you sure?' } %>

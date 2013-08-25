@@ -5,9 +5,9 @@ class CreateImages < ActiveRecord::Migration
       t.text :description
       t.string :image_path
 
-      t.boolean :processed, default: false
-      t.boolean :approved, default: false
+      t.string :state, default: 'unprocessed'
       t.boolean :nude, default: false
+      t.integer :turkee_task_id
 
       t.timestamps
     end

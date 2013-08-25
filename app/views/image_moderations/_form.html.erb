@@ -1,0 +1,27 @@
+<%= turkee_form_for(@image_moderation, params) do |f| %>
+
+  <p>
+    Look at the image below and click 'nudity' if you see a nipple, otherwise click
+    'no nudity'.
+  </p>
+
+  <hr>
+
+  <%= image_tag @image.image_path %>
+
+  <hr>
+
+  <%= f.hidden_field :image_id, value: @image.id %>
+
+  <div class="field">
+    <% [ImageModeration::NUDITY, ImageModeration::NONUDITY].each do |option| %>
+      <%= f.label :choice, option, value: option %>
+      <%= f.radio_button :choice, option %>
+    <% end %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit 'Submit', disabled: @disabled %>
+  </div>
+
+<% end %>

@@ -10,6 +10,10 @@ ImageTurkModeration::Application.configure do
   # Rake tasks automatically ignore this option for performance.
   config.eager_load = true
 
+  # Need to set this to the production url when we decide
+  config.action_mailer.default_url_options = { :host => 'www.site.com', :protocol => "https" }
+
+
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
