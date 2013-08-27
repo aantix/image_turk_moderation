@@ -13,7 +13,7 @@ regulars = [['http://www.rolemommy.com/j0422156.jpg', false],
 
 
 puts "Seeding sample data..."
-[bikinis, nudes, regulars].each do |images|
+[regulars, bikinis, nudes].each do |images|
   images.each do |image|
     Image.create!(image_path: image[0], nude: image[1])
   end

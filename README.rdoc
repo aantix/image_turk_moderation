@@ -1,21 +1,24 @@
 == DESCRIPTION
 
-Rails Mechanical Turk app for the approval/disapproval of images.
+Rails 4 app for that performs triplicate verification via Mechanical Turk whether
+an image contains nudity or not. As HIT assignments are completed, the Image state
+will either be marked as 'accepted' or 'rejected'.
+
+Developed for Fanpop.com.
 
 
-== TODO
+== SETUP
 
-1) Create rake task that generates turk tasks for unprocessed images
+1) Add your AWS credentials to config/initializers/turkee.rb
 
-   a) External form should point to Images#show
-   b) mark all as processed
+== INSTRUCTIONS
 
+1) To post HITs for all images that haven't been processed, call the following :
+    rake moderate_images
 
-2) def self.hit_complete(turkee_task)
-     #do something
-   end
+2) To retrieve data from Mechanical Turk and process it, call the following :
+    rake turkee:get_all_results
 
-   Be sure to approve or disapprove, depending on whether the three assigments
-   are in agreement on whether nudity exists or not.
+http://i.imgur.com/BJjcxeb.png
 
-   Look to ActionTraction for an implementation of this.
+http://i.imgur.com/Hmaq82r.png

@@ -7,18 +7,14 @@
 
   <hr>
 
-  <%= image_tag @image.image_path %>
-
-  <hr>
+  <%= image_tag @image.image_path, align: 'left', vspace: 10, hspace: 10 %>
 
   <%= f.hidden_field :image_id, value: @image.id %>
 
-  <div class="field">
     <% [ImageModeration::NUDITY, ImageModeration::NONUDITY].each do |option| %>
-      <%= f.label :choice, option, value: option %>
+      <%= option %>
       <%= f.radio_button :choice, option %>
     <% end %>
-  </div>
 
   <div class="actions">
     <%= f.submit 'Submit', disabled: @disabled %>

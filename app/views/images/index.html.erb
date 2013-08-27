@@ -1,4 +1,4 @@
-<h1>Images</h1>
+<h1>Fanpop Image Moderation</h1>
 
 <table class="table table-striped">
   <thead>
@@ -17,6 +17,8 @@
           <%= image.state %>
         </td>
         <td>
+          <%= link_to 'Manual Approve', approve_image_path(image) %> |
+          <%= link_to 'Manual Reject', reject_image_path(image) %> |
           <%= link_to 'Edit', edit_image_path(image) %> |
           <%= link_to 'Delete', image, method: :delete, data: { confirm: 'Are you sure?' } %>
         </td>

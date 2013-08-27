@@ -12,6 +12,7 @@ gem 'turkee', path: '../turkee'
 gem "bootstrap-sass"
 gem 'will_paginate'
 gem "transitions", require: ["transitions", "active_model/transitions"]
+gem 'randumb'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

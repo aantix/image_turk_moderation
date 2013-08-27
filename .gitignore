@@ -20,6 +20,9 @@ db/*.sqlite3
 /log/*
 /tmp/*
 
+
+config/initializers/turkee.rb
+
 # various artifacts
 **.war
 *.rbc
