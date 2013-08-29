@@ -1,8 +1,7 @@
 <%= turkee_form_for(@image_moderation, params) do |f| %>
 
   <p>
-    Look at the image below and click 'nudity' if you see a nipple, otherwise click
-    'no nudity'.
+    Look at the image below and click 'inappropriate' if you see an image with any of the following criteria, otherwise click OK.
   </p>
 
   <hr>
@@ -11,7 +10,7 @@
 
   <%= f.hidden_field :image_id, value: @image.id %>
 
-    <% [ImageModeration::NUDITY, ImageModeration::NONUDITY].each do |option| %>
+    <% [ImageModeration::INAPPROPRIATE, ImageModeration::OK].each do |option| %>
       <%= option %>
       <%= f.radio_button :choice, option %>
     <% end %>

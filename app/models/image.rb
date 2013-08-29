@@ -1,8 +1,8 @@
 class Image < ActiveRecord::Base
   include ActiveModel::Transitions
 
-  TITLE           = "Detect nudity in photos"
-  DESCRIPTION     = "Look at the photo below.  Click the nudity button if you see a nipple, otherwise click 'no nudity'."
+  TITLE           = "Is this image inappropriate?"
+  DESCRIPTION     = "Look at the photo below.  Click the inappropriate button if you see an image with one of the following criteria. Otherwise click 'OK'"
   NUM_ASSIGNMENTS = 3 # Per HIT
   REWARD          = 0.03
   LIFETIME        = 2 # Days
